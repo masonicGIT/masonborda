@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mason Borda</title>
+<meta name="description" content="Mason Borda — Builder at the intersection of finance, compliance, and blockchain infrastructure. Founder of Tokensoft.">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #080808;
+    --surface: #111111;
+    --border: #1c1c1c;
+    --text: #eeeeee;
+    --muted: #555555;
+    --accent: #888888;
+    --gold: #c8a96e;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Georgia', 'Times New Roman', serif;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 24px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(8,8,8,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-name {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+  }
+  .nav-links a {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 60px 80px;
+    max-width: 900px;
+  }
+  .hero-inner {}
+  .hero-label {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 40px;
+  }
+  h1 {
+    font-size: 80px;
+    font-weight: normal;
+    line-height: 1.0;
+    letter-spacing: -2px;
+    margin-bottom: 40px;
+    color: var(--text);
+  }
+  h1 .dim { color: #333; }
+  .hero-bio {
+    font-size: 18px;
+    line-height: 1.85;
+    color: var(--accent);
+    max-width: 540px;
+    margin-bottom: 56px;
+  }
+  .hero-links {
+    display: flex;
+    gap: 36px;
+    flex-wrap: wrap;
+  }
+  .hero-links a {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 4px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .hero-links a:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 100px 60px;
+    max-width: 900px;
+    border-top: 1px solid var(--border);
+  }
+  .section-label {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 56px;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .tl-item {
+    display: grid;
+    grid-template-columns: 80px 1px 1fr;
+    gap: 0 28px;
+    padding-bottom: 48px;
+    position: relative;
+  }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-year {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 1px;
+    padding-top: 4px;
+    text-align: right;
+  }
+  .tl-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .tl-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+  .tl-bar {
+    width: 1px;
+    flex: 1;
+    background: var(--border);
+    margin-top: 8px;
+  }
+  .tl-item:last-child .tl-bar { display: none; }
+  .tl-content {}
+  .tl-title {
+    font-size: 17px;
+    color: var(--text);
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .tl-desc {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* VENTURES */
+  .ventures {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .venture {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--border);
+    gap: 24px;
+  }
+  .venture:first-child { border-top: 1px solid var(--border); }
+  .venture-left {}
+  .venture-name {
+    font-size: 20px;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .venture-desc {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .venture-tag {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  /* PRESS */
+  .press-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .press-item {}
+  .press-pub {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .press-headline {
+    font-size: 17px;
+    color: var(--text);
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  .press-quote {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--accent);
+    font-style: italic;
+    border-left: 2px solid var(--border);
+    padding-left: 20px;
+    margin-bottom: 12px;
+  }
+  .press-link {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .press-link:hover { color: var(--text); border-color: var(--text); }
+
+  /* FOOTER */
+  footer {
+    padding: 60px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-name {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .footer-links {
+    display: flex;
+    gap: 28px;
+  }
+  .footer-links a {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--text); }
+
+  @media (max-width: 768px) {
+    nav { padding: 20px 24px; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 24px 60px; }
+    h1 { font-size: 52px; }
+    section { padding: 64px 24px; }
+    footer { padding: 40px 24px; flex-direction: column; gap: 24px; }
+    .tl-item { grid-template-columns: 60px 1px 1fr; gap: 0 16px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-name">Mason Borda</span>
+  <div class="nav-links">
+    <a href="#work">Work</a>
+    <a href="#timeline">Background</a>
+    <a href="#press">Press</a>
+    <a href="mailto:mason@galactic.inc">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">Engineer · Founder · Builder</div>
+    <h1>Mason<br><span class="dim">Borda.</span></h1>
+    <p class="hero-bio">A decade building compliant financial infrastructure on the blockchain. Inventor of ERC-1404. Founder of Tokensoft — the platform behind the first SEC-registered security token IPO in history. Now building what's next.</p>
+    <div class="hero-links">
+      <a href="https://twitter.com/masonic_tweets" target="_blank">Twitter</a>
+      <a href="https://linkedin.com/in/masonborda" target="_blank">LinkedIn</a>
+      <a href="#press">Press</a>
+      <a href="mailto:mason@galactic.inc">Contact</a>
+    </div>
+  </div>
+</div>
+
+<!-- CURRENT WORK -->
+<section id="work">
+  <div class="section-label">Current</div>
+  <div class="ventures">
+    <div class="venture">
+      <div class="venture-left">
+        <div class="venture-name">Standard Asset Company</div>
+        <div class="venture-desc">Digital asset management and structured finance for global institutional markets. UAE-based.</div>
+      </div>
+      <div class="venture-tag">Finance · UAE</div>
+    </div>
+    <div class="venture">
+      <div class="venture-left">
+        <div class="venture-name">Intergalactic Data Centers</div>
+        <div class="venture-desc">AI data center infrastructure built on a grant-first financing model. Next-generation compute for the AI era.</div>
+      </div>
+      <div class="venture-tag">AI · Infrastructure</div>
+    </div>
+    <div class="venture">
+      <div class="venture-left">
+        <div class="venture-name">Mezosphere</div>
+        <div class="venture-desc">DeFi-native broker paper loans and credit infrastructure with Apple Pay integration.</div>
+      </div>
+      <div class="venture-tag">DeFi · Lending</div>
+    </div>
+    <div class="venture">
+      <div class="venture-left">
+        <div class="venture-name">Tokensoft</div>
+        <div class="venture-desc">The leading platform for compliant security token issuance. Supported launches in 50+ countries. Behind the first SEC-registered security token IPO in history.</div>
+      </div>
+      <div class="venture-tag">Founded 2017</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="section-label">Background</div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-year">2008</div>
+      <div class="tl-line"><div class="tl-dot"></div><div class="tl-bar"></div></div>
+      <div class="tl-content">
+        <div class="tl-title">Boeing & Space Systems/Loral</div>
+        <div class="tl-desc">Electrical engineer. Worked on aerospace systems after graduating from Cal Poly San Luis Obispo (BS) and Santa Clara University (MS, Electrical Engineering).</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2013</div>
+      <div class="tl-line"><div class="tl-dot"></div><div class="tl-bar"></div></div>
+      <div class="tl-content">
+        <div class="tl-title">BitGo — First Ethereum Custody</div>
+        <div class="tl-desc">Entered crypto. Built the first commercially viable Ethereum custody solution. Co-created Ether.li — the first Ethereum multi-signature web wallet — with Ben Chan and Barath Chandrashekar. Also architected custody infrastructure for the Royal Mint of England's blockchain project.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2014</div>
+      <div class="tl-line"><div class="tl-dot"></div><div class="tl-bar"></div></div>
+      <div class="tl-content">
+        <div class="tl-title">Co-founded Payroll Integrations</div>
+        <div class="tl-desc">Co-founded Payroll Integrations, which today serves clients representing 14% of the U.S. 401(k) market.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2017</div>
+      <div class="tl-line"><div class="tl-dot"></div><div class="tl-bar"></div></div>
+      <div class="tl-content">
+        <div class="tl-title">Founded Tokensoft</div>
+        <div class="tl-desc">Founded Tokensoft the week the SEC issued its first blockchain securities guidance. First customers launched September 9, 2017 — the same day as incorporation. Invented ERC-1404, the token standard for SEC-compliant blockchain securities.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2019</div>
+      <div class="tl-line"><div class="tl-dot"></div><div class="tl-bar"></div></div>
+      <div class="tl-content">
+        <div class="tl-title">SEC Transfer Agent Registration</div>
+        <div class="tl-desc">Tokensoft secured SEC registration as a transfer agent through subsidiary DTAC LLC — building toward the vision of an "automated investment bank" on the blockchain. Partnerships with Coinbase Custody, tZERO, Signature Bank, Anchorage, SEBA Bank.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2020</div>
+      <div class="tl-line"><div class="tl-dot"></div><div class="tl-bar"></div></div>
+      <div class="tl-content">
+        <div class="tl-title">Historic Firsts — ArCoin & INX IPO</div>
+        <div class="tl-desc">Led the first Ethereum-native investment fund registered under the '40 Act with the SEC (ArCoin). Led the first SEC-registered security token IPO in history (INX, ~$85M raised on Ethereum). Featured in CoinDesk and Forbes.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2021</div>
+      <div class="tl-line"><div class="tl-dot"></div><div class="tl-bar"></div></div>
+      <div class="tl-content">
+        <div class="tl-title">Wrapped XRP & Cross-Chain Expansion</div>
+        <div class="tl-desc">Launched Wrapped XRP (wXRP) on Ethereum DeFi via Tokensoft's Wrapped product. Expanded cross-chain bridging to Kadena and other networks.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2025</div>
+      <div class="tl-line"><div class="tl-dot"></div><div class="tl-bar"></div></div>
+      <div class="tl-content">
+        <div class="tl-title">New Chapter</div>
+        <div class="tl-desc">After nearly a decade building Tokensoft, turned to new frontiers: institutional digital asset management in the UAE, AI data center infrastructure, and DeFi-native credit markets.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRESS -->
+<section id="press">
+  <div class="section-label">Press</div>
+  <div class="press-grid">
+
+    <div class="press-item">
+      <div class="press-pub">Forbes · August 2020</div>
+      <div class="press-headline">Anchorage Is Blurring The Lines Between Crypto And Wall Street</div>
+      <div class="press-quote">"In traditional brokerage accounts, when a share is purchased by an investor, that share is placed into custody. This user experience has eluded the blockchain space until today."</div>
+      <a class="press-link" href="https://www.forbes.com/sites/billybambrough/2020/08/13/exclusive-anchorage-is-blurring-the-lines-between-crypto-and-wall-street/" target="_blank">Read on Forbes →</a>
+    </div>
+
+    <div class="press-item">
+      <div class="press-pub">CoinDesk · July 2020</div>
+      <div class="press-headline">605 Days Later: How ArCoins Got the SEC Go-Ahead as an Ethereum-Traded Treasurys Fund</div>
+      <div class="press-quote">"Convincing the U.S. Securities and Exchange Commission that the Ethereum blockchain is an acceptable medium to store regulated investment funds was no easy task for Mason Borda of Tokensoft."</div>
+      <a class="press-link" href="https://www.coindesk.com/markets/2020/07/29/605-days-later-how-arcoins-got-the-sec-go-ahead-as-an-ethereum-traded-treasurys-fund" target="_blank">Read on CoinDesk →</a>
+    </div>
+
+    <div class="press-item">
+      <div class="press-pub">CoinDesk · December 2019</div>
+      <div class="press-headline">TokenSoft Scores Transfer Agent Registration to Build 'Automated Investment Bank'</div>
+      <div class="press-quote">"We're building all the things you need for an automated investment bank. DTAC can help companies go straight to IPO by managing shares on the blockchain. We do have all the pieces necessary."</div>
+      <a class="press-link" href="https://www.coindesk.com/business/2019/12/12/tokensoft-scores-transfer-agent-registration-to-build-automated-investment-bank" target="_blank">Read on CoinDesk →</a>
+    </div>
+
+    <div class="press-item">
+      <div class="press-pub">CoinDesk · September 2020</div>
+      <div class="press-headline">How to Watch INX's IPO in Real Time on the Ethereum Blockchain</div>
+      <div class="press-quote">Tokensoft provided the infrastructure for the first-ever SEC-registered security token IPO — raising over $85M on the Ethereum blockchain in a landmark moment for regulated digital assets.</div>
+      <a class="press-link" href="https://www.coindesk.com/business/2020/09/10/how-to-watch-inxs-ipo-in-real-time-on-the-ethereum-blockchain" target="_blank">Read on CoinDesk →</a>
+    </div>
+
+    <div class="press-item">
+      <div class="press-pub">CoinDesk · October 2021</div>
+      <div class="press-headline">XRP Gets Wrapped by Tokensoft for Ethereum DeFi Debut</div>
+      <div class="press-quote">Tokensoft launched Wrapped XRP (wXRP), bringing XRP liquidity to Ethereum DeFi via a multi-custodial approach in partnership with Hex Trust.</div>
+      <a class="press-link" href="https://www.coindesk.com/business/2021/10/29/xrp-gets-wrapped-by-tokensoft-for-ethereum-defi-debut" target="_blank">Read on CoinDesk →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-name">© 2026 Mason Borda</span>
+  <div class="footer-links">
+    <a href="https://twitter.com/masonic_tweets" target="_blank">Twitter</a>
+    <a href="https://linkedin.com/in/masonborda" target="_blank">LinkedIn</a>
+    <a href="mailto:mason@galactic.inc">Email</a>
+  </div>
+</footer>
+
+</body>
+</html>
