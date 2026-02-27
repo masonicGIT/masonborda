@@ -31,7 +31,7 @@
   /* NAV */
   nav {
     position: fixed;
-    top: 0; left: 0; right: 0;
+    top: 37px; left: 0; right: 0;
     z-index: 100;
     padding: 24px 60px;
     display: flex;
@@ -68,7 +68,7 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 120px 60px 80px;
+    padding: 160px 60px 80px;
     max-width: 900px;
   }
   .hero-inner {}
@@ -297,6 +297,49 @@
   }
   .footer-links a:hover { color: var(--text); }
 
+  /* ANNOUNCEMENT BANNER */
+  .announcement-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 200;
+    background: var(--gold);
+    padding: 10px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .announcement-bar a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    color: #080808;
+  }
+  .announcement-label {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0.7;
+    white-space: nowrap;
+  }
+  .announcement-title {
+    font-family: 'Georgia', serif;
+    font-size: 13px;
+    color: #080808;
+    letter-spacing: 0.2px;
+  }
+  .announcement-cta {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    opacity: 0.7;
+  }
+
   @media (max-width: 768px) {
     nav { padding: 20px 24px; }
     .nav-links { display: none; }
@@ -305,10 +348,21 @@
     section { padding: 64px 24px; }
     footer { padding: 40px 24px; flex-direction: column; gap: 24px; }
     .tl-item { grid-template-columns: 60px 1px 1fr; gap: 0 16px; }
+    .announcement-bar { padding: 10px 16px; }
+    .announcement-cta { display: none; }
   }
 </style>
 </head>
 <body>
+
+<!-- ANNOUNCEMENT BANNER -->
+<div class="announcement-bar">
+  <a href="https://themasonic.substack.com/p/the-investigation" target="_blank">
+    <span class="announcement-label">New</span>
+    <span class="announcement-title">The Investigation — How Tokensoft survived two years under SEC scrutiny</span>
+    <span class="announcement-cta">Read →</span>
+  </a>
+</div>
 
 <nav>
   <span class="nav-name">Mason Borda</span>
