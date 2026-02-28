@@ -3,8 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mason Borda</title>
-<meta name="description" content="Mason Borda — Builder at the intersection of finance, compliance, and blockchain infrastructure. Founder of Tokensoft.">
+<title>Mason Borda — Founder, Tokensoft | Blockchain & Digital Asset Infrastructure</title>
+<meta name="description" content="Mason Borda is a fintech founder and operator at the intersection of finance, compliance, and blockchain infrastructure. Founder of Tokensoft, the institutional token issuance platform.">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://masonborda.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Mason Borda — Founder, Tokensoft">
+<meta property="og:description" content="Fintech founder and operator at the intersection of finance, compliance, and blockchain infrastructure. Founder of Tokensoft.">
+<meta property="og:url" content="https://masonborda.com/">
+<meta property="og:image" content="https://masonborda.com/og-image.jpg">
+<meta property="og:site_name" content="Mason Borda">
+<meta property="profile:first_name" content="Mason">
+<meta property="profile:last_name" content="Borda">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@masonic_tweets">
+<meta name="twitter:creator" content="@masonic_tweets">
+<meta name="twitter:title" content="Mason Borda — Founder, Tokensoft">
+<meta name="twitter:description" content="Fintech founder and operator at the intersection of finance, compliance, and blockchain infrastructure.">
+<meta name="twitter:image" content="https://masonborda.com/og-image.jpg">
+
+<!-- Structured Data — Person Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mason Borda",
+  "url": "https://masonborda.com",
+  "sameAs": [
+    "https://twitter.com/masonic_tweets",
+    "https://www.linkedin.com/in/masonborda",
+    "https://themasonic.substack.com"
+  ],
+  "jobTitle": "Founder",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Tokensoft"
+  },
+  "description": "Fintech founder and operator at the intersection of finance, compliance, and blockchain infrastructure. Founder of Tokensoft, the institutional token issuance platform.",
+  "knowsAbout": ["blockchain", "tokenization", "digital assets", "fintech", "compliance", "DeFi"]
+}
+</script>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -611,5 +654,77 @@
   </div>
 </footer>
 
+<!-- PAC-MAN EASTER EGG: type the Konami code ↑↑↓↓←→←→BA -->
+<div id="pacman-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:9999;flex-direction:column;align-items:center;justify-content:center;">
+  <div style="color:#FFD700;font-family:'Courier New',monospace;font-size:13px;letter-spacing:2px;margin-bottom:20px;opacity:0.6;">PRESS ESC TO EXIT</div>
+  <canvas id="pacman-canvas" width="560" height="560" style="border:2px solid #1a1a1a;"></canvas>
+</div>
+<script>
+// Konami code detector
+(function(){
+  const code=[38,38,40,40,37,39,37,39,66,65];
+  let idx=0;
+  document.addEventListener('keydown',e=>{
+    if(e.keyCode===code[idx]){idx++;if(idx===code.length){launchPacman();idx=0;}}
+    else{idx=e.keyCode===code[0]?1:0;}
+    if(e.keyCode===27){document.getElementById('pacman-overlay').style.display='none';}
+  });
+  function launchPacman(){
+    const o=document.getElementById('pacman-overlay');
+    o.style.display='flex';
+    runPacman();
+  }
+  function runPacman(){
+    const canvas=document.getElementById('pacman-canvas');
+    const ctx=canvas.getContext('2d');
+    const CELL=20,COLS=28,ROWS=28;
+    // Simple maze (1=wall, 0=dot, 2=empty, 3=power)
+    const maze=[];
+    for(let r=0;r<ROWS;r++){maze.push([]);for(let c=0;c<COLS;c++){maze[r].push(r===0||r===ROWS-1||c===0||c===COLS-1?1:0);}}
+    // Pac-Man state
+    let px=14,py=21,pdir={x:0,y:0},pmouth=0.25,pmouthDir=1;
+    let score=0,dots=0;
+    // Place dots
+    for(let r=1;r<ROWS-1;r++)for(let c=1;c<COLS-1;c++){if(maze[r][c]===0){maze[r][c]=0;dots++;}}
+    document.addEventListener('keydown',function handler(e){
+      if(e.keyCode===37)pdir={x:-1,y:0};
+      else if(e.keyCode===39)pdir={x:1,y:0};
+      else if(e.keyCode===38)pdir={x:0,y:-1};
+      else if(e.keyCode===40)pdir={x:0,y:1};
+      if(e.keyCode===27){cancelAnimationFrame(raf);document.removeEventListener('keydown',handler);}
+    });
+    let raf;
+    function draw(){
+      ctx.fillStyle='#000';ctx.fillRect(0,0,canvas.width,canvas.height);
+      // Draw maze
+      for(let r=0;r<ROWS;r++){for(let c=0;c<COLS;c++){
+        if(maze[r][c]===1){ctx.fillStyle='#1a6aff';ctx.fillRect(c*CELL,r*CELL,CELL,CELL);}
+        else{ctx.fillStyle='#FFD700';ctx.beginPath();ctx.arc(c*CELL+CELL/2,r*CELL+CELL/2,2,0,Math.PI*2);ctx.fill();}
+      }}
+      // Move pac-man
+      const nx=px+pdir.x,ny=py+pdir.y;
+      if(nx>=0&&nx<COLS&&ny>=0&&ny<ROWS&&maze[ny][nx]!==1){
+        px=nx;py=ny;
+        if(maze[py][px]===0){maze[py][px]=2;score+=10;dots--;}
+      }
+      // Draw pac-man
+      pmouth+=0.05*pmouthDir;
+      if(pmouth>0.4||pmouth<0.02)pmouthDir*=-1;
+      const angle=Math.atan2(pdir.y,pdir.x);
+      ctx.fillStyle='#FFD700';
+      ctx.beginPath();
+      ctx.moveTo(px*CELL+CELL/2,py*CELL+CELL/2);
+      ctx.arc(px*CELL+CELL/2,py*CELL+CELL/2,CELL/2-1,angle+pmouth*Math.PI,(angle+2-pmouth)*Math.PI);
+      ctx.closePath();ctx.fill();
+      // Score
+      ctx.fillStyle='#fff';ctx.font='14px "Courier New"';
+      ctx.fillText('SCORE: '+score,8,canvas.height-8);
+      if(dots===0){ctx.fillStyle='#FFD700';ctx.font='bold 32px "Courier New"';ctx.textAlign='center';ctx.fillText('YOU WIN!',canvas.width/2,canvas.height/2);}
+      raf=requestAnimationFrame(draw);
+    }
+    draw();
+  }
+})();
+</script>
 </body>
 </html>
