@@ -1,0 +1,57 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writing — Mason Borda</title>
+<meta name="description" content="Essays on crypto compliance, token infrastructure, DeFi, and startup building by Mason Borda.">
+<link rel="canonical" href="https://masonborda.com/writing/">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --bg: #080808; --border: #1c1c1c; --text: #eeeeee; --muted: #888888; --accent: #aaaaaa; --gold: #c8a96e; }
+  body { background: var(--bg); color: var(--text); font-family: 'Georgia', serif; -webkit-font-smoothing: antialiased; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; background: rgba(8,8,8,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+  .nav-name { font-family: 'Courier New', monospace; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+  .nav-links a { font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #bbb; text-decoration: none; margin-left: 32px; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 120px 40px 100px; }
+  .page-label { font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 48px; }
+  .post-list { display: flex; flex-direction: column; }
+  .post-row { display: grid; grid-template-columns: 80px 1fr; gap: 32px; padding: 36px 0; border-bottom: 1px solid var(--border); align-items: start; text-decoration: none; transition: opacity 0.2s; }
+  .post-row:first-of-type { border-top: 1px solid var(--border); }
+  .post-row:hover { opacity: 0.75; }
+  .post-year { font-family: 'Courier New', monospace; font-size: 11px; color: var(--gold); letter-spacing: 1px; padding-top: 5px; }
+  .post-title { font-size: 22px; color: var(--text); line-height: 1.3; margin-bottom: 8px; }
+  .post-subtitle { font-size: 14px; color: var(--muted); line-height: 1.6; }
+  @media (max-width: 768px) { nav { padding: 16px 24px; } .wrap { padding: 90px 24px 60px; } .post-row { grid-template-columns: 1fr; gap: 8px; } }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-name">Mason Borda</a>
+  <div class="nav-links">
+    <a href="/#work">Work</a>
+    <a href="/writing/">Writing</a>
+    <a href="/#press">Press</a>
+    <a href="https://themasonic.substack.com" target="_blank">Newsletter</a>
+  </div>
+</nav>
+<div class="wrap">
+  <div class="page-label">Writing</div>
+  <div class="post-list">
+    {% assign posts = site.posts | sort: 'date' | reverse %}
+    {% for post in posts %}
+    <a class="post-row" href="{{ post.url }}">
+      <div class="post-year">{{ post.date | date: "%Y" }}</div>
+      <div>
+        <div class="post-title">{{ post.title }}</div>
+        {% if post.subtitle %}<div class="post-subtitle">{{ post.subtitle }}</div>{% endif %}
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+</body>
+</html>

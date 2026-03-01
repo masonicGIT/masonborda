@@ -1,0 +1,13 @@
+title: Mason Borda
+description: Founder. Builder. A decade at the intersection of crypto and compliance.
+url: https://masonborda.com
+baseurl: ""
+permalink: /writing/:slug/
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+exclude:
+  - Gemfile
+  - Gemfile.lock
