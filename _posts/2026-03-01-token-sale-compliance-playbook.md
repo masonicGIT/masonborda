@@ -1,11 +1,8 @@
 ---
 layout: post
-title: "Untitled"
+title: "The Token Sale Compliance Playbook: Lessons From $1 Billion in Raises"
+subtitle: "How the biggest blockchain launches of the last decade got done — and what every founder gets backwards."
 ---
-
-# The Token Sale Compliance Playbook: Lessons From $1 Billion in Raises
-
-**How the biggest blockchain launches of the last decade got done — and what every founder gets backwards.**
 
 ---
 
