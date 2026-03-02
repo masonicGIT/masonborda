@@ -69,9 +69,9 @@
     --bg: #080808;
     --surface: #111111;
     --border: #1c1c1c;
-    --text: #f0f0f0;
-    --muted: #b0b0b0;
-    --accent: #d4d4d4;
+    --text: #f2f2f2;
+    --muted: #c8c8c8;
+    --accent: #e0e0e0;
     --gold: #c8a96e;
   }
 
@@ -82,6 +82,13 @@
     color: var(--text);
     font-family: 'Georgia', 'Times New Roman', serif;
     min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* All description/body copy uses readable sans-serif at proper weight */
+  .hero-bio, .tl-desc, .venture-desc, .press-quote, .press-headline {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -147,7 +154,7 @@
   }
   h1 .dim { color: #333; }
   .hero-bio {
-    font-size: 18px;
+    font-size: 19px;
     line-height: 1.85;
     color: var(--accent);
     max-width: 540px;
@@ -241,10 +248,10 @@
     line-height: 1.4;
   }
   .tl-desc {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 14px;
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 15px;
     color: var(--muted);
-    line-height: 1.8;
+    line-height: 1.85;
     font-weight: 400;
   }
 
@@ -270,10 +277,10 @@
     margin-bottom: 6px;
   }
   .venture-desc {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 14px;
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 15px;
     color: var(--muted);
-    line-height: 1.8;
+    line-height: 1.85;
     font-weight: 400;
   }
   .venture-tag {
@@ -307,9 +314,9 @@
     margin-bottom: 12px;
   }
   .press-quote {
-    font-size: 15px;
-    line-height: 1.85;
-    color: #d8d8d8;
+    font-size: 16px;
+    line-height: 1.9;
+    color: #e0e0e0;
     font-style: italic;
     border-left: 2px solid var(--border);
     padding-left: 20px;
