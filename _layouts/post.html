@@ -16,22 +16,27 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
-    --bg: #080808; --surface: #111111; --border: #1c1c1c;
-    --text: #eeeeee; --muted: #888888; --accent: #aaaaaa; --gold: #c8a96e;
+    --bg: #042f2e;
+    --surface: #133b3b;
+    --border: #264b4a;
+    --text: #f0ece4;
+    --muted: #b8c4c4;
+    --accent: #e2ddd6;
+    --gold: #c8a96e;
   }
-  body { background: var(--bg); color: var(--text); font-family: 'Georgia', 'Times New Roman', serif; -webkit-font-smoothing: antialiased; }
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; background: rgba(8,8,8,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+  body { background: var(--bg); color: var(--text); font-family: 'Spectral', Georgia, serif; -webkit-font-smoothing: antialiased; }
+  nav { position: fixed; top: 37px; left: 0; right: 0; z-index: 100; padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; background: rgba(4,47,46,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
   .nav-name { font-family: 'Courier New', monospace; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); text-decoration: none; }
   .nav-links a { font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #bbb; text-decoration: none; margin-left: 32px; }
   .nav-links a:hover { color: var(--text); }
-  .post-wrap { max-width: 680px; margin: 0 auto; padding: 120px 40px 100px; }
+  .post-wrap { max-width: 680px; margin: 0 auto; padding: 140px 40px 100px; }
   .post-meta { margin-bottom: 48px; }
   .post-tag { font-family: 'Courier New', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
-  h1 { font-size: 42px; font-weight: normal; line-height: 1.15; letter-spacing: -1px; margin-bottom: 16px; }
-  .post-subtitle { font-size: 20px; color: var(--accent); line-height: 1.5; margin-bottom: 24px; }
+  h1 { font-size: 42px; font-weight: 600; font-family: 'Lora', Georgia, serif; color: #ffffff; line-height: 1.15; letter-spacing: -1px; margin-bottom: 16px; }
+  .post-subtitle { font-size: 20px; color: #e2ddd6; line-height: 1.5; margin-bottom: 24px; }
   .post-date { font-family: 'Courier New', monospace; font-size: 11px; color: var(--muted); letter-spacing: 1px; }
   .post-divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
-  .post-content { font-size: 18px; line-height: 1.85; color: #ddd; }
+  .post-content { font-size: 18px; line-height: 1.85; color: #e2ddd6; }
   .post-content h2 { font-size: 26px; font-weight: normal; margin: 48px 0 20px; color: var(--text); letter-spacing: -0.5px; }
   .post-content h3 { font-size: 20px; font-weight: normal; margin: 36px 0 16px; color: var(--text); }
   .post-content p { margin-bottom: 24px; }
@@ -45,18 +50,34 @@
   .post-content table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 15px; }
   .post-content th { border-bottom: 1px solid var(--border); padding: 8px 12px; text-align: left; color: var(--muted); font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
   .post-content td { border-bottom: 1px solid var(--border); padding: 10px 12px; color: var(--accent); }
-  .post-content code { font-family: 'Courier New', monospace; font-size: 14px; background: var(--surface); padding: 2px 6px; border-radius: 3px; color: var(--gold); }
-  .post-bio { margin-top: 64px; padding: 32px; border: 1px solid var(--border); border-radius: 4px; background: var(--surface); }
+  .post-content code { font-family: 'Courier New', monospace; font-size: 14px; background: #133b3b; padding: 2px 6px; border-radius: 3px; color: var(--gold); }
+  .post-bio { margin-top: 64px; padding: 32px; border: 1px solid var(--border); border-radius: 4px; background: #133b3b; }
   .post-bio-name { font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
   .post-bio-text { font-size: 14px; color: var(--muted); line-height: 1.7; }
   .post-bio-links { margin-top: 16px; display: flex; gap: 24px; }
   .post-bio-links a { font-family: 'Courier New', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); text-decoration: none; }
   .back-link { font-family: 'Courier New', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); text-decoration: none; display: inline-block; margin-top: 64px; }
   .back-link:hover { color: var(--text); }
-  @media (max-width: 768px) { nav { padding: 16px 24px; } .post-wrap { padding: 100px 24px 60px; } h1 { font-size: 30px; } .post-content { font-size: 17px; } }
+  @media (max-width: 768px) { nav { padding: 16px 24px; } .post-wrap { padding: 120px 24px 60px; } h1 { font-size: 30px; } .post-content { font-size: 17px; } }
+
+  .announcement-bar { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: #a16207; padding: 10px 60px; display: flex; align-items: center; justify-content: center; gap: 16px; }
+  .announcement-bar a { display: flex; align-items: center; gap: 16px; text-decoration: none; color: #fff; }
+  .announcement-label { font-family: 'Courier New', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; font-weight: bold; opacity: 0.85; white-space: nowrap; }
+  .announcement-title { font-family: 'Spectral', Georgia, serif; font-size: 14px; color: #fff; }
+  .announcement-cta { font-family: 'Courier New', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; white-space: nowrap; opacity: 0.8; }
+  @media (max-width: 768px) { .announcement-bar { padding: 8px 16px; } .announcement-cta { display: none; } }
+
 </style>
 </head>
 <body>
+<div class="announcement-bar">
+  <a href="https://themasonic.substack.com/p/the-investigation" target="_blank">
+    <span class="announcement-label">New</span>
+    <span class="announcement-title">The Investigation — How Tokensoft survived two years under SEC scrutiny</span>
+    <span class="announcement-cta">Read →</span>
+  </a>
+</div>
+
 <nav>
   <a href="/" class="nav-name">Mason Borda</a>
   <div class="nav-links">
