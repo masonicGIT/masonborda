@@ -107,6 +107,57 @@
     opacity: 0.8;
   }
 
+
+  /* MOBILE NAV */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    transition: all 0.25s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(4,47,46,0.98);
+    z-index: 90;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    padding-top: 80px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    transition: color 0.2s;
+  }
+  .mobile-menu a:hover { color: var(--gold); }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none !important; }
+    .hamburger { display: flex; }
+  }
+
 </style>
 </head>
 <body>
@@ -126,8 +177,20 @@
     <a href="/#timeline">Background</a>
     <a href="/writing/">Writing</a>
     <a href="/podcasts/" class="active">Podcasts</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
   </div>
 </nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/" onclick="closeMobileMenu()">Home</a>
+  <a href="/#work" onclick="closeMobileMenu()">Work</a>
+  <a href="/#timeline" onclick="closeMobileMenu()">Background</a>
+  <a href="/writing/" onclick="closeMobileMenu()">Writing</a>
+  <a href="/#press" onclick="closeMobileMenu()">Press</a>
+  <a href="/podcasts/" onclick="closeMobileMenu()">Podcasts</a>
+  <a href="https://themasonic.substack.com" target="_blank" onclick="closeMobileMenu()">Newsletter</a>
+</div>
 <div class="post-wrap">
   <div class="post-meta">
     <div class="post-show">Holistic Investment Podcast · Constantin Kogan · Episode 57</div>
@@ -156,5 +219,19 @@
     <a href="/">Home</a>
   </div>
 </footer>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  function closeMobileMenu() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+</script>
 </body>
 </html>
