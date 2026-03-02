@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Podcasts & Interviews — Mason Borda</title>
+<meta name="description" content="Mason Borda podcast appearances and interviews on security tokens, compliant blockchain infrastructure, DeFi, and crypto regulation. Featuring The Pomp Podcast, Castle Island, Messari, Delphi, and more.">
+<link rel="canonical" href="https://masonborda.com/podcasts/">
+<meta property="og:title" content="Podcasts & Interviews — Mason Borda">
+<meta property="og:description" content="Mason Borda on security tokens, compliant crypto infrastructure, and the future of blockchain finance. 9 years of thinking out loud.">
+<meta property="og:url" content="https://masonborda.com/podcasts/">
+<meta property="og:image" content="https://masonborda.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@masonic_tweets">
+<meta name="robots" content="index, follow">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Mason Borda — Podcast Appearances & Interviews",
+  "url": "https://masonborda.com/podcasts/",
+  "description": "Mason Borda podcast appearances covering security token infrastructure, SEC-compliant blockchain development, DeFi, and crypto regulation.",
+  "author": {
+    "@type": "Person",
+    "name": "Mason Borda",
+    "url": "https://masonborda.com"
+  }
+}
+</script>
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #080808; --surface: #111111; --border: #1c1c1c;
+    --text: #eeeeee; --muted: #888888; --accent: #aaaaaa; --gold: #c8a96e;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: 'Georgia', 'Times New Roman', serif; min-height: 100vh; -webkit-font-smoothing: antialiased; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 24px 60px; display: flex; justify-content: space-between; align-items: center;
+    background: rgba(8,8,8,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);
+  }
+  .nav-name { font-family: 'Courier New', monospace; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+  .nav-links a { font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #bbb; text-decoration: none; margin-left: 32px; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+  .page-header { padding: 160px 60px 80px; max-width: 900px; border-bottom: 1px solid var(--border); }
+  .page-label { font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; }
+  .page-title { font-size: 64px; font-weight: normal; line-height: 1.05; letter-spacing: -1.5px; margin-bottom: 28px; }
+  .page-desc { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.9; color: var(--muted); max-width: 560px; }
+
+  .podcast-list { max-width: 900px; padding: 0 60px; }
+
+  .podcast-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    padding: 52px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .podcast-item:first-child { padding-top: 52px; }
+
+  .pod-show {
+    font-family: 'Courier New', monospace; font-size: 10px; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+  }
+  .pod-title { font-size: 22px; line-height: 1.35; color: var(--text); margin-bottom: 14px; }
+  .pod-desc {
+    font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 14px;
+    line-height: 1.85; color: var(--muted); margin-bottom: 24px; max-width: 560px;
+  }
+  .pod-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  .pod-tag {
+    font-family: 'Courier New', monospace; font-size: 9px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--muted); border: 1px solid var(--border);
+    padding: 4px 10px; border-radius: 2px;
+  }
+  .pod-links { display: flex; gap: 24px; flex-wrap: wrap; align-items: center; }
+  .pod-link {
+    font-family: 'Courier New', monospace; font-size: 10px; letter-spacing: 2px;
+    text-transform: uppercase; text-decoration: none; border-bottom: 1px solid rgba(200,169,110,0.3);
+    padding-bottom: 2px; transition: all 0.2s;
+  }
+  .pod-link.primary { color: var(--gold); }
+  .pod-link.primary:hover { color: #fff; border-color: #fff; }
+  .pod-link.secondary { color: var(--muted); border-color: rgba(136,136,136,0.3); }
+  .pod-link.secondary:hover { color: var(--text); border-color: var(--text); }
+
+  .pod-meta { text-align: right; flex-shrink: 0; padding-top: 4px; }
+  .pod-number { font-family: 'Courier New', monospace; font-size: 48px; color: var(--border); line-height: 1; font-weight: normal; }
+  .pod-year { font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 2px; color: var(--muted); margin-top: 8px; }
+
+  .section-intro {
+    padding: 80px 60px 0; max-width: 900px;
+    font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px;
+    line-height: 1.8; color: #444; letter-spacing: 0.5px;
+  }
+
+  footer { padding: 60px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; margin-top: 80px; }
+  .footer-name { font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); }
+  .footer-links { display: flex; gap: 28px; }
+  .footer-links a { font-family: 'Courier New', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #bbb; text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--text); }
+
+  @media (max-width: 768px) {
+    nav { padding: 14px 24px; }
+    .nav-links { display: none; }
+    .page-header { padding: 100px 24px 48px; }
+    .page-title { font-size: 42px; }
+    .podcast-list { padding: 0 24px; }
+    .podcast-item { grid-template-columns: 1fr; gap: 0; }
+    .pod-meta { display: none; }
+    footer { padding: 40px 24px; flex-direction: column; gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-name" href="/">Mason Borda</a>
+  <div class="nav-links">
+    <a href="/#work">Work</a>
+    <a href="/#timeline">Background</a>
+    <a href="/writing/">Writing</a>
+    <a href="/#press">Press</a>
+    <a href="/podcasts/" class="active">Podcasts</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-label">Conversations</div>
+  <h1 class="page-title">Podcasts &<br>Interviews</h1>
+  <p class="page-desc">Mason has been building compliant crypto infrastructure since before it was a career. These conversations document the thinking behind the work — from the first SEC-registered token IPO to the compliance frameworks now used across the industry.</p>
+</div>
+
+<div class="podcast-list">
+
+  <!-- 1. The Pomp Podcast -->
+  <div class="podcast-item">
+    <div class="pod-left">
+      <div class="pod-show">The Pomp Podcast · Anthony Pompliano</div>
+      <div class="pod-title">Is Programmable Code a Security?</div>
+      <div class="pod-desc">A framework for thinking about digital securities vs. non-securities. What Tokensoft does, what it means for a security to be programmable, and what most people misunderstand about digital asset compliance.</div>
+      <div class="pod-tags">
+        <span class="pod-tag">Securities Law</span>
+        <span class="pod-tag">ERC-1404</span>
+        <span class="pod-tag">Compliance</span>
+      </div>
+      <div class="pod-links">
+        <a class="pod-link primary" href="https://open.spotify.com/show/4kYCRYJ3yK5DQbP5tbfZby" target="_blank">Listen on Spotify →</a>
+      </div>
+    </div>
+    <div class="pod-meta">
+      <div class="pod-number">01</div>
+      <div class="pod-year">2020</div>
+    </div>
+  </div>
+
+  <!-- 2. On The Brink — Castle Island -->
+  <div class="podcast-item">
+    <div class="pod-left">
+      <div class="pod-show">On The Brink · Castle Island Ventures</div>
+      <div class="pod-title">The Convergence of Tokens and Capital Markets</div>
+      <div class="pod-desc">Tokensoft's ERC-1404 standard, why securities belong on-chain, the shared values of securities law and crypto markets, and what it would take for stock transactions to become a real-time, global phenomenon.</div>
+      <div class="pod-tags">
+        <span class="pod-tag">Capital Markets</span>
+        <span class="pod-tag">ERC-1404</span>
+        <span class="pod-tag">Tokenization</span>
+        <span class="pod-tag">Real-Time Settlement</span>
+      </div>
+      <div class="pod-links">
+        <a class="pod-link primary" href="https://open.spotify.com/episode/7rlCwZUuzM5rJGHCsOFcg5" target="_blank">Listen on Spotify →</a>
+      </div>
+    </div>
+    <div class="pod-meta">
+      <div class="pod-number">02</div>
+      <div class="pod-year">2020</div>
+    </div>
+  </div>
+
+  <!-- 3. Messari Unqualified Opinions -->
+  <div class="podcast-item">
+    <div class="pod-left">
+      <div class="pod-show">Messari Unqualified Opinions · Ryan Selkis</div>
+      <div class="pod-title">Security Token Hurdles & Pathways to Growth</div>
+      <div class="pod-desc">Despite the hype, security tokens had no real trading volume. Mason Borda breaks down the structural hurdles that still remain and makes a measured, data-grounded case for where the market goes over the next several years.</div>
+      <div class="pod-tags">
+        <span class="pod-tag">Security Tokens</span>
+        <span class="pod-tag">Market Structure</span>
+        <span class="pod-tag">Adoption</span>
+      </div>
+      <div class="pod-links">
+        <a class="pod-link primary" href="https://podcasts.apple.com/us/podcast/tokensoft-ceo-mason-borda-on-security-token-hurdles/id1455666979?i=1000475076609" target="_blank">Listen on Apple Podcasts →</a>
+      </div>
+    </div>
+    <div class="pod-meta">
+      <div class="pod-number">03</div>
+      <div class="pod-year">2020</div>
+    </div>
+  </div>
+
+  <!-- 4. The Delphi Podcast -->
+  <div class="podcast-item">
+    <div class="pod-left">
+      <div class="pod-show">The Delphi Podcast · Delphi Digital</div>
+      <div class="pod-title">Blockchain Technology Enabling a 24/7 and Global Digital Security Market</div>
+      <div class="pod-desc">The thesis for a global, round-the-clock digital securities market built on blockchain rails — and the infrastructure required to make it happen at institutional scale.</div>
+      <div class="pod-tags">
+        <span class="pod-tag">Digital Securities</span>
+        <span class="pod-tag">Global Markets</span>
+        <span class="pod-tag">Infrastructure</span>
+      </div>
+      <div class="pod-links">
+        <a class="pod-link primary" href="https://open.spotify.com/show/7K5HPFFzMpEDQBmn5AMXFB" target="_blank">Listen on Spotify →</a>
+      </div>
+    </div>
+    <div class="pod-meta">
+      <div class="pod-number">04</div>
+      <div class="pod-year">2020</div>
+    </div>
+  </div>
+
+  <!-- 5. TF Labs — INX IPO -->
+  <div class="podcast-item">
+    <div class="pod-left">
+      <div class="pod-show">TF Labs · Episode 118</div>
+      <div class="pod-title">Launching the First IPO of a Security Token — INX</div>
+      <div class="pod-desc">A deep dive into how Tokensoft built the infrastructure for the INX Token — the first-ever SEC-registered security token IPO on the Ethereum blockchain. How it worked, what the SEC wanted, and what it means for the future of capital formation.</div>
+      <div class="pod-tags">
+        <span class="pod-tag">INX IPO</span>
+        <span class="pod-tag">SEC Registration</span>
+        <span class="pod-tag">Ethereum</span>
+        <span class="pod-tag">Transfer Agent</span>
+      </div>
+      <div class="pod-links">
+        <a class="pod-link primary" href="https://www.youtube.com/watch?v=-PU6eXpy6W0" target="_blank">Watch on YouTube →</a>
+        <a class="pod-link secondary" href="/podcasts/tf-labs-inx-ipo/">Read Transcript →</a>
+      </div>
+    </div>
+    <div class="pod-meta">
+      <div class="pod-number">05</div>
+      <div class="pod-year">Sep 2020</div>
+    </div>
+  </div>
+
+  <!-- 6. Security Token Insight -->
+  <div class="podcast-item">
+    <div class="pod-left">
+      <div class="pod-show">Security Token Insight</div>
+      <div class="pod-title">Expert Interview with Mason Borda, CEO of TokenSoft</div>
+      <div class="pod-desc">The full platform breakdown: KYB (Know Your Business), ERC-1404, cybersecurity, scalability, and compliance. How Tokensoft approaches the intersection of securities law and blockchain infrastructure.</div>
+      <div class="pod-tags">
+        <span class="pod-tag">KYB</span>
+        <span class="pod-tag">ERC-1404</span>
+        <span class="pod-tag">Platform Overview</span>
+        <span class="pod-tag">Compliance</span>
+      </div>
+      <div class="pod-links">
+        <a class="pod-link primary" href="https://www.youtube.com/watch?v=Rr3fdtJ6szE" target="_blank">Watch on YouTube →</a>
+        <a class="pod-link secondary" href="/podcasts/security-token-insight/">Read Transcript →</a>
+      </div>
+    </div>
+    <div class="pod-meta">
+      <div class="pod-number">06</div>
+      <div class="pod-year">2019</div>
+    </div>
+  </div>
+
+  <!-- 7. Constantin Kogan -->
+  <div class="podcast-item">
+    <div class="pod-left">
+      <div class="pod-show">Holistic Investment Podcast · Constantin Kogan · Episode 57</div>
+      <div class="pod-title">Compliant Launch of Digital Assets</div>
+      <div class="pod-desc">From the 2022 bear market and FTX collapse: utility vs. security tokens, Fair Launch 2.0, DAOs and their regulatory reality, regulatory remediation for non-compliant token launches, and what excites Mason most in the next cycle. The most complete interview on Tokensoft's full platform philosophy.</div>
+      <div class="pod-tags">
+        <span class="pod-tag">Fair Launch 2.0</span>
+        <span class="pod-tag">DAOs</span>
+        <span class="pod-tag">Regulatory Remediation</span>
+        <span class="pod-tag">Bear Market</span>
+        <span class="pod-tag">DeFi</span>
+      </div>
+      <div class="pod-links">
+        <a class="pod-link primary" href="https://www.youtube.com/watch?v=Iy-5qtQIDYc" target="_blank">Watch on YouTube →</a>
+        <a class="pod-link secondary" href="/podcasts/constantin-kogan-ep57/">Read Transcript →</a>
+      </div>
+    </div>
+    <div class="pod-meta">
+      <div class="pod-number">07</div>
+      <div class="pod-year">Dec 2022</div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <span class="footer-name">© 2026 Mason Borda</span>
+  <div class="footer-links">
+    <a href="https://twitter.com/masonic_tweets" target="_blank">Twitter</a>
+    <a href="https://www.linkedin.com/in/mason-tokensoft" target="_blank">LinkedIn</a>
+    <a href="https://themasonic.substack.com" target="_blank">Substack</a>
+    <a href="/">Home</a>
+  </div>
+</footer>
+
+</body>
+</html>
