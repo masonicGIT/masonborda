@@ -66,13 +66,14 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --bg: #080808;
-    --surface: #111111;
-    --border: #1c1c1c;
-    --text: #f2f2f2;
-    --muted: #c8c8c8;
-    --accent: #e0e0e0;
-    --gold: #c8a96e;
+    --bg: #042f2e;
+    --surface: #133b3b;
+    --border: #264b4a;
+    --text: #f0ece4;
+    --muted: #b0bdbd;
+    --accent: #d9d9d9;
+    --gold: #a16207;
+    --gold-light: #c8a96e;
   }
 
   html { scroll-behavior: smooth; }
@@ -80,16 +81,19 @@
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: 'Georgia', 'Times New Roman', serif;
+    font-family: 'Spectral', Georgia, 'Times New Roman', serif;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
   }
 
-  /* All description/body copy uses readable sans-serif at proper weight */
-  .hero-bio, .tl-desc, .venture-desc, .press-quote, .press-headline {
-    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  /* Body copy: Spectral for elegant readability */
+  .hero-bio {
+    font-family: 'Spectral', Georgia, serif;
     font-weight: 400;
-    -webkit-font-smoothing: antialiased;
+  }
+  .tl-desc, .venture-desc, .press-quote, .press-headline {
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 400;
   }
 
   /* NAV */
@@ -101,7 +105,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(8,8,8,0.92);
+    background: rgba(4,47,46,0.97);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
   }
@@ -146,13 +150,14 @@
   }
   h1 {
     font-size: 80px;
-    font-weight: normal;
+    font-weight: 600;
+    font-family: 'Lora', Georgia, serif;
     line-height: 1.0;
     letter-spacing: -2px;
     margin-bottom: 40px;
     color: var(--text);
   }
-  h1 .dim { color: #333; }
+  h1 .dim { color: #4b6a69; }
   .hero-bio {
     font-size: 19px;
     line-height: 1.85;
@@ -194,7 +199,7 @@
     font-size: 11px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--gold-light);
     margin-bottom: 56px;
   }
 
@@ -215,7 +220,7 @@
   .tl-year {
     font-family: 'Courier New', monospace;
     font-size: 12px;
-    color: var(--gold);
+    color: var(--gold-light);
     letter-spacing: 1px;
     padding-top: 4px;
     text-align: right;
@@ -229,7 +234,7 @@
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: var(--gold);
+    background: var(--gold-light);
     margin-top: 7px;
     flex-shrink: 0;
   }
@@ -370,7 +375,7 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 200;
-    background: var(--gold);
+    background: #a16207;
     padding: 10px 60px;
     display: flex;
     align-items: center;
