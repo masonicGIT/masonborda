@@ -29,7 +29,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  :root { --bg: #042f2e; --surface: #133b3b; --border: #264b4a; --text: #f0ece4; --muted: #b0bdbd; --accent: #d9d9d9; --gold: #c8a96e;
+  :root { --bg: #042f2e; --surface: #133b3b; --border: #264b4a; --text: #f0ece4; --muted: #b8c4c4; --accent: #e2ddd6; --gold: #c8a96e;
+    --gold-light: #d4b97e;
     --gold-light: #c8a96e; }
   html { scroll-behavior: smooth; }
   body { background: var(--bg); color: var(--text); font-family: 'Spectral', Georgia, 'Times New Roman', serif; min-height: 100vh; -webkit-font-smoothing: antialiased; }
@@ -37,10 +38,11 @@
   .nav-name { font-family: 'Courier New', monospace; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); text-decoration: none; }
   .nav-links a { font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #bbb; text-decoration: none; margin-left: 32px; transition: color 0.2s; }
   .nav-links a:hover { color: var(--gold); }
-  .post-wrap { max-width: 720px; margin: 0 auto; padding: 120px 40px 100px; }
+  .post-wrap { max-width: 720px; margin: 0 auto; padding: 140px 40px 100px; }
   .post-meta { margin-bottom: 48px; }
   .post-show { font-family: 'Courier New', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-  h1 { font-size: 38px; font-weight: normal; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 20px; }
+  h1 {
+    font-family: 'Lora', Georgia, serif; font-size: 38px; font-weight: 600; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 20px; }
   .post-desc { font-family: 'Spectral', Georgia, serif; font-size: 15px; line-height: 1.8; color: var(--muted); margin-bottom: 28px; }
   .post-links { display: flex; gap: 24px; flex-wrap: wrap; padding-bottom: 40px; border-bottom: 1px solid var(--border); margin-bottom: 48px; }
   .post-link { font-family: 'Courier New', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid rgba(200,169,110,0.3); padding-bottom: 2px; color: var(--gold); transition: all 0.2s; }
@@ -48,7 +50,7 @@
   .post-link.secondary { color: var(--muted); border-color: rgba(136,136,136,0.3); }
   .post-link.secondary:hover { color: var(--text); border-color: var(--text); }
   .transcript-label { font-family: 'Courier New', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 32px; }
-  .transcript { font-family: 'Spectral', Georgia, serif; font-size: 15px; line-height: 2.0; color: #d9d9d9; }
+  .transcript { font-family: 'Spectral', Georgia, serif; font-size: 15px; line-height: 2.0; color: #e2ddd6; }
   .transcript p { margin-bottom: 24px; }
   footer { padding: 60px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; margin-top: 80px; }
   .footer-name { font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); }
@@ -62,9 +64,61 @@
     h1 { font-size: 28px; }
     footer { padding: 40px 24px; flex-direction: column; gap: 20px; }
   }
+  /* ANNOUNCEMENT BANNER */
+  .announcement-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 200;
+    background: #a16207;
+    padding: 10px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .announcement-bar a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    color: #fff;
+  }
+  .announcement-label {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0.85;
+    white-space: nowrap;
+  }
+  .announcement-title {
+    font-family: 'Spectral', Georgia, serif;
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 0.2px;
+  }
+  .announcement-cta {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    opacity: 0.8;
+  }
+
 </style>
 </head>
 <body>
+<!-- ANNOUNCEMENT BANNER -->
+<div class="announcement-bar">
+  <a href="https://themasonic.substack.com/p/the-investigation" target="_blank">
+    <span class="announcement-label">New</span>
+    <span class="announcement-title">The Investigation — How Tokensoft survived two years under SEC scrutiny</span>
+    <span class="announcement-cta">Read →</span>
+  </a>
+</div>
+
 <nav>
   <a class="nav-name" href="/">Mason Borda</a>
   <div class="nav-links">

@@ -36,14 +36,15 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
     --bg: #042f2e; --surface: #133b3b; --border: #264b4a;
-    --text: #f0ece4; --muted: #b0bdbd; --accent: #d9d9d9; --gold: #c8a96e;
+    --text: #f0ece4; --muted: #b8c4c4; --accent: #e2ddd6; --gold: #c8a96e;
+    --gold-light: #d4b97e;
     --gold-light: #c8a96e;
   }
   html { scroll-behavior: smooth; }
   body { background: var(--bg); color: var(--text); font-family: 'Spectral', Georgia, 'Times New Roman', serif; min-height: 100vh; -webkit-font-smoothing: antialiased; }
 
   nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    position: fixed; top: 37px; left: 0; right: 0; z-index: 100;
     padding: 24px 60px; display: flex; justify-content: space-between; align-items: center;
     background: rgba(4,47,46,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);
   }
@@ -120,9 +121,61 @@
     .pod-meta { display: none; }
     footer { padding: 40px 24px; flex-direction: column; gap: 20px; }
   }
+  /* ANNOUNCEMENT BANNER */
+  .announcement-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 200;
+    background: #a16207;
+    padding: 10px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .announcement-bar a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    color: #fff;
+  }
+  .announcement-label {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0.85;
+    white-space: nowrap;
+  }
+  .announcement-title {
+    font-family: 'Spectral', Georgia, serif;
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 0.2px;
+  }
+  .announcement-cta {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    opacity: 0.8;
+  }
+
 </style>
 </head>
 <body>
+
+<!-- ANNOUNCEMENT BANNER -->
+<div class="announcement-bar">
+  <a href="https://themasonic.substack.com/p/the-investigation" target="_blank">
+    <span class="announcement-label">New</span>
+    <span class="announcement-title">The Investigation — How Tokensoft survived two years under SEC scrutiny</span>
+    <span class="announcement-cta">Read →</span>
+  </a>
+</div>
 
 <nav>
   <a class="nav-name" href="/">Mason Borda</a>
