@@ -119,10 +119,11 @@
   }
   .nav-name {
     font-family: 'Courier New', monospace;
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--muted);
+    color: #ffffff;
   }
   .nav-links {
     display: flex;
@@ -231,7 +232,8 @@
   .tl-item:last-child { padding-bottom: 0; }
   .tl-year {
     font-family: 'Courier New', monospace;
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 700;
     color: var(--gold-light);
     letter-spacing: 1px;
     padding-top: 4px;
@@ -319,7 +321,8 @@
   .press-item {}
   .press-pub {
     font-family: 'Courier New', monospace;
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--gold);
@@ -342,7 +345,8 @@
   }
   .press-link {
     font-family: 'Courier New', monospace;
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--gold);
@@ -363,10 +367,11 @@
   }
   .footer-name {
     font-family: 'Courier New', monospace;
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--muted);
+    color: #ffffff;
   }
   .footer-links {
     display: flex;
@@ -374,14 +379,15 @@
   }
   .footer-links a {
     font-family: 'Courier New', monospace;
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #d8e2e2;
+    color: #ffffff;
     text-decoration: none;
     transition: color 0.2s;
   }
-  .footer-links a:hover { color: var(--text); }
+  .footer-links a:hover { color: var(--gold); }
 
   /* ANNOUNCEMENT BANNER */
   .announcement-bar {
@@ -408,22 +414,24 @@
     letter-spacing: 3px;
     text-transform: uppercase;
     font-weight: bold;
-    opacity: 0.7;
+    opacity: 1.0;
     white-space: nowrap;
   }
   .announcement-title {
     font-family: 'Georgia', serif;
-    font-size: 13px;
+    font-size: 15px;
+    font-weight: 700;
     color: #080808;
     letter-spacing: 0.2px;
   }
   .announcement-cta {
     font-family: 'Courier New', monospace;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
     white-space: nowrap;
-    opacity: 0.7;
+    opacity: 1.0;
   }
 
   @media (max-width: 768px) {
@@ -773,7 +781,7 @@
 <!-- NEWSLETTER -->
 <section id="newsletter" style="border-top: 1px solid var(--border); padding: 80px 60px; text-align: center;">
   <div style="max-width: 520px; margin: 0 auto;">
-    <div style="font-family: 'Courier New', monospace; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px;">Newsletter</div>
+    <div style="font-family: 'Courier New', monospace; font-size: 15px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px;">Newsletter</div>
     <h2 style="font-size: 28px; font-weight: 500; margin-bottom: 12px; letter-spacing: -0.5px;">Thoughts on Finance, Infrastructure & Crypto</h2>
     <p style="color: #d8e2e2; font-size: 15px; font-weight: 500; line-height: 1.7; margin-bottom: 32px;">Occasional writing on tokenization, AI infrastructure, and what's actually happening at the frontier of financial technology.</p>
     <iframe src="https://themasonic.substack.com/embed"
@@ -794,7 +802,7 @@
 
 <!-- PAC-MAN EASTER EGG: type the Konami code ↑↑↓↓←→←→BA -->
 <div id="pacman-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:9999;flex-direction:column;align-items:center;justify-content:center;">
-  <div style="color:#FFD700;font-family:'Courier New',monospace;font-size:13px;letter-spacing:2px;margin-bottom:20px;opacity:0.6;">PRESS ESC TO EXIT</div>
+  <div style="color:#FFD700;font-family:'Courier New',monospace;font-size:14px;font-weight:700;letter-spacing:2px;margin-bottom:20px;opacity:1.0;">PRESS ESC TO EXIT</div>
   <canvas id="pacman-canvas" width="560" height="560" style="border:2px solid #1a1a1a;"></canvas>
 </div>
 <script>
