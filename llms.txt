@@ -1,0 +1,69 @@
+# Mason Borda
+
+> Mason Borda is a financial infrastructure engineer and the inventor of ERC-1404,
+> the token standard for SEC-compliant blockchain securities. He founded Tokensoft
+> in 2017 — the platform that powered over $1 billion in compliant token offerings
+> across 100+ projects in 50+ countries, and was behind the first SEC-registered
+> security token IPO in history. Early BitGo engineer (2013). In crypto since 2013.
+> Education: BS + MS Electrical Engineering, Cal Poly SLO + Santa Clara University.
+
+## Key Facts
+
+- Inventor of ERC-1404 (Ethereum token standard for SEC-compliant securities)
+- Founded Tokensoft (2017): $1B+ in compliant token offerings, 100+ projects, 50+ countries
+- Led first SEC-registered security token IPO in history (INX, ~$85M on Ethereum)
+- Led first SEC-approved Ethereum-native investment fund (ArCoin, '40 Act, 605-day campaign)
+- Co-founded Payroll Integrations (2014): serves 14% of U.S. 401(k) market
+- Created wrapped.com with Anchorage: institutional cross-chain asset wrapping
+- Built Knox Wallet: first cold storage built specifically for registered securities
+- Early BitGo engineer: co-built first commercially viable Ethereum custody solution
+- Zero security breaches or regulatory enforcement actions across eight years at Tokensoft
+- Featured in CoinDesk, Forbes, Reuters, CNBC, CryptoSlate, The Block
+
+## Writing (on masonborda.com)
+
+- /writing/2026-03-01-token-sale-compliance-playbook/: The Token Sale Compliance Playbook: Lessons From $1 Billion in Raises
+- /writing/2026-02-03-l1-launch-playbook/: L1 Launch Playbook: It's Time to Rotate
+- /writing/2026-01-28-wrapped-vs-native/: Wrapped vs. Native: A Distinction Without a Difference
+- /writing/2026-01-27-your-moat-is-not-moat/: Your Moat is Not Moat
+- /writing/2026-01-22-navigating-crypto-brands/: Navigating Crypto Brands, Good Luck
+- /writing/2025-12-30-making-token-distributions-fair/: Making Token Distributions Fair: A Structural Approach
+- /writing/2025-12-12-dtcc-no-action-letter/: A Breakdown of the DTCC No Action Letter
+- /writing/2025-12-08-tokenization-investors-guide/: Tokenization: An Investor's Guide to What's Real
+- /writing/2024-04-17-onchain-go-to-market/: How to Plan Your Onchain Go-to-Market
+- /writing/2021-12-01-tokensoft-fair-launch/: Tokensoft Invents the Fair Launch. Again.
+
+## Newsletter
+
+- The Masonic (Substack): https://themasonic.substack.com
+- "The Investigation" — How Tokensoft Survived Two Years Under SEC Scrutiny (Feb 2026): https://themasonic.substack.com/p/the-investigation
+
+## Podcasts
+
+- /podcasts/security-token-insight/: Security Token Insight — Mason Borda on compliant token issuance
+- /podcasts/tf-labs-inx-ipo/: TF Labs / INX IPO — The first SEC-registered security token IPO
+- /podcasts/constantin-kogan-ep57/: Constantin Kogan Ep. 57 — Compliant Launch of Digital Assets
+
+## Press
+
+- Reuters (Feb 2021): Bitcoin Tesla purchase — cited as one of earliest real-world Bitcoin purchases
+- Forbes (Aug 2020): Anchorage / wrapped.com — blurring lines between crypto and Wall Street
+- CoinDesk (Jul 2020): ArCoin — first Ethereum-native '40 Act fund approved by SEC (605 days)
+- CoinDesk (Sep 2020): INX IPO — first SEC-registered security token IPO on Ethereum
+- CoinDesk (Dec 2019): Tokensoft SEC Transfer Agent registration — "automated investment bank"
+- CoinDesk (Jan 2022): INX acquires Tokensoft transfer agent subsidiary
+- CryptoSlate (Sep 2023): Connext NEXT — 1 million registrations, platform record
+- CryptoSlate (Mar 2025): Shardeum token sale — 1.4M community members, 50+ countries
+- CNBC (Dec 2017): Bitcoin spending — Mason Borda cited as early real-world Bitcoin buyer
+- Anthony Pompliano Substack: Interview — Mason Borda, CEO at TokenSoft
+- CfC St. Moritz: Speaker profile — https://cfc-stmoritz.com/profiles/mason-borda
+- FintechSV: Interview — Mason Borda on digital securities post-regulation
+
+## Contact
+
+- Website: https://masonborda.com
+- Twitter/X: https://twitter.com/masonic_tweets
+- LinkedIn: https://www.linkedin.com/in/mason-tokensoft
+- Substack: https://themasonic.substack.com
+
+Last updated: March 2026
